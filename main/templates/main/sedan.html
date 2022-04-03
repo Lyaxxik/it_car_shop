@@ -1,0 +1,79 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %} Index Page {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+
+  <div id="demo" class="carousel slide" data-ride="carousel">
+
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+    </ul>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'main/first.jpg' %}" alt="First" height=675 class="mx-auto d-block">
+        <div class="carousel-caption text-dark">
+          <h3>Общий вид</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'main/second.jpg' %}" height=675 width=967 alt="Second" class="mx-auto d-block">
+        <div class="carousel-caption text-dark">
+          <h3>Вид спереди</h3>
+        </div>
+      </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+
+  </div>
+
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1>Седан S500</h1>
+      <p>Седан с вызывающе элегантным экстерьером, невероятной маневренностью на дороге и передовыми технологиями для безопасности и комфорта.</p>
+      <p>Цены, комплектации и наличие указаны ниже.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Цены и комплектации</h2>
+    <table class="table table-dark table-striped">
+      <thead>
+        <tr>
+          <th>Комплектация</th>
+          <th>Цена</th>
+          <th>Наличие</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Comfort</td>
+          <td>8 000 000 ₸</td>
+          <td>В наличии</td>
+        </tr>
+        <tr>
+          <td>Advanced</td>
+          <td>13 000 000 ₸</td>
+          <td>Отсутствует</td>
+        </tr>
+        <tr>
+          <td>Luxury</td>
+          <td>20 000 000 ₸</td>
+          <td>Отсутствует</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+{% endblock %}

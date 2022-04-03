@@ -1,0 +1,26 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'main:index_page' %}">Car Store <i class="fas fa-car"></i></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse pull-right" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      {% if user.is_authenticated %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:logout_view' %}">Выйти</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:login_page' %}">Войти</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:register_page' %}">Зарегистрироваться</a>
+      </li>
+      {% endif %}
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'main:profile_page' %}">Профиль</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Index Page {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+
+  <div class="row mt-4 text-center">
+    <div class="col-sm-12">
+      <h1>Приветствуем, {{ user.username }}!</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2>Детали вашего аккаунта:</h2>
+    <div class="card bg-secondary text-white">
+      <div class="card-body">Ваше имя: {{ user.first_name }}</div>
+    </div>
+    <br>
+    <div class="card bg-secondary text-white">
+      <div class="card-body">Ваша фамилия: {{ user.last_name }}</div>
+    </div>
+    <br>
+    <div class="card bg-secondary text-white">
+      <div class="card-body">Ваша почта: {{ user.email }}</div>
+    </div>
+  </div>
+
+{% endblock %}

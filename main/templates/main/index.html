@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %} Index Page {% endblock %}
+
+{% block body %}
+
+  {% include 'main/navigation_bar.html' %}
+
+  <div class="row" id="ex">
+    <div class="col-sm-12">
+      <div class="jumbotron">
+        <h1 class="text-center">Добро пожаловать!</h1>
+        <p class="text-center">Что вас интересует?</p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    p{
+      font-size: 1.75em;
+    }
+    #ex{
+      text-align: center;
+      background-image: url("https://s1.1zoom.ru/big0/737/Roads_Lixiang_ONE_2020_Crossover_Motion_Chinese_592320_1280x853.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+
+  <div class="row" id="ex">
+    <div class="col-sm-6">
+      <div class="card mx-auto" style="width:500px; background-color: rgba(245, 245, 245, 0.3);">
+        <img class="card-img-top" src="{% static 'main/sedan.png' %}" height=350 alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Седаны</h4>
+          <p class="card-text">Закрытый кузов легкового автомобиля с багажником, два ряда сидений.</p>
+          <a href="{% url 'main:sedan_page' %}" class="btn btn-dark">Узнать больше</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card mx-auto" style="width:500px; background-color: rgba(245, 245, 245, 0.3);">
+        <img class="card-img-top" src="{% static 'main/crossover.png' %}" height=350 alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Кроссоверы</h4>
+          <p class="card-text">Тип автомобиля, построенный на легковой платформе с несущим кузовом.</p>
+          <a href="{% url 'main:crossover_page' %}" class="btn btn-dark">Узнать больше</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
